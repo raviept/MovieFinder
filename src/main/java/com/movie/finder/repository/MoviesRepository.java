@@ -1,7 +1,6 @@
 package com.movie.finder.repository;
 
-import com.movie.finder.model.Movie;
-import org.springframework.stereotype.Repository;
+import com.movie.finder.entity.Movie;
 
 import java.util.List;
 

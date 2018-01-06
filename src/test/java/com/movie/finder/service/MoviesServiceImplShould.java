@@ -1,6 +1,6 @@
 package com.movie.finder.service;
 
-import com.movie.finder.model.Movie;
+import com.movie.finder.entity.Movie;
 import com.movie.finder.repository.MoviesRepository;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -19,8 +19,25 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MoviesServiceTest {
+public class MoviesServiceImplShould {
     private static List<Movie> stubMovies;
+
+    private MoviesService moviesService;
+
+    /*
+     * Tests
+     */
+
+    @Test
+    public void listMoviesInTheatres() {
+        List<Movie> movies = moviesService.getMoviesInTheatres();
+
+        assertEquals(stubMovies, movies);
+    }
+
+        /*
+     * Setup section
+     */
 
     @BeforeClass
     public static void setStubMovies() {
@@ -28,20 +45,12 @@ public class MoviesServiceTest {
         stubMovies.add(new Movie("Das boot"));
     }
 
-    private MoviesService moviesService;
 
     @Before
     public void createMoviesService() {
         MoviesRepository moviesRepository = createMockedRepository();
 
         moviesService = new MoviesServiceImpl(moviesRepository);
-    }
-
-    @Test
-    public void testGetMoviesInTheatres() {
-        List<Movie> movies = moviesService.getMoviesInTheatres();
-
-        assertEquals(stubMovies, movies);
     }
 
     private MoviesRepository createMockedRepository() {

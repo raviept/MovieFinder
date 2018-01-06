@@ -1,10 +1,9 @@
 package com.movie.finder.service;
 
-import com.movie.finder.model.Movie;
+import com.movie.finder.entity.Movie;
 import com.movie.finder.repository.MoviesRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

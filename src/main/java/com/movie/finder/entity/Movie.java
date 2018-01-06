@@ -1,6 +1,12 @@
-package com.movie.finder.model;
+package com.movie.finder.entity;
 
-public class Movie {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
+@Entity
+public class Movie implements Serializable{
+    @Id
     private final String title;
 
     public Movie(String title) {

@@ -1,6 +1,6 @@
 package com.movie.finder.controller;
 
-import com.movie.finder.model.Movie;
+import com.movie.finder.entity.Movie;
 import com.movie.finder.service.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

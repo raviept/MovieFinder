@@ -1,7 +1,7 @@
 package com.movie.finder;
 
 import com.movie.finder.controller.MovieFinderController;
-import com.movie.finder.model.Movie;
+import com.movie.finder.entity.Movie;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

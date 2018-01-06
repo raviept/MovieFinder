@@ -1,6 +1,6 @@
 package com.movie.finder.service;
 
-import com.movie.finder.model.Movie;
+import com.movie.finder.entity.Movie;
 
 import java.util.List;
 
