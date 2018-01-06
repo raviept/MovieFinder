@@ -1,0 +1,127 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+
+% Set your name here
+\def\name{Xavier Vila\c{c}a}
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {Computer Science,Distributed Systems},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 8.5in},
+  left=1.0in,
+  top=1.25in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+
+
+\begin{document}
+
+\begin{center}
+
+\huge{Requirements}
+
+\end{center}
+
+\vspace{0.25in}
+
+\section{Overview}
+
+\begin{itemize}
+	\item Desktop app that shows different types of list of movies in tabs, including best movies playing nearby and new releases	
+		
+	\item User can open details of each movie to see movie theatres, rooms, and hours during which movie is being played, description,
+	ratings according to different sources, and any other relevant information about the movie.
+\end{itemize}
+
+
+\section{Main Features}
+
+Lists in different tabs:
+\begin{enumerate}
+	\item List of movies playing in nearby theatres with minimum rating:
+	\label{nearby:movies}
+	\begin{itemize}
+		\item Create list of all movies playing in nearby theatres and respective ratings
+		\item Order by decreasing ratings
+		\item Filter movies with low ratings
+	\end{itemize}
+	
+	\item List of movies being released in the present week:
+	\begin{itemize}
+		\item Create sublist of (\ref{nearby:movies}) that are being released in the present week
+	\end{itemize}
+\end{enumerate}
+
+Movie details:
+\begin{itemize}
+	\item Image and detailed description
+	\item Ratings according to different sources
+	\item List of nearby movie theatres ordered by increasing distance - for each movie theatre:
+	\begin{itemize}
+	    \item Map
+		\item Room and hours during in which movie plays
+	\end{itemize}
+\end{itemize}
+
+\section*{Information}
+
+Cross information about movies from two sources:
+\begin{itemize}
+   \item Movie databases such as Imdb:
+   \begin{itemize}
+   		\item Descriptions
+   		\item International names/ids
+   		\item Images
+   \end{itemize}
+   
+   \item Rating sites such as Rotten tomatoes and Imdb
+   
+   \item Movie theatres:
+   \begin{itemize}
+   		\item Rooms
+   		\item Schedules
+   		\item Location
+   \end{itemize}
+\end{itemize}
+
+\end{document}

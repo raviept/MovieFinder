@@ -1,22 +1,30 @@
 package com.movie.finder.controller;
 
-import org.junit.Assert;
+import com.movie.finder.service.MoviesService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.mockito.Mockito.*;
+
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = MovieFinderController.class)
+@SpringBootTest
 public class MovieFinderControllerTest {
-	@Autowired
 	private MovieFinderController controller;
+	private MoviesService moviesService;
+
+	@Before
+	public void createMovieFinderController() {
+		moviesService = mock(MoviesService.class);
+		controller = new MovieFinderController(moviesService);
+	}
 
 	@Test
-	public void testHomeEndpoint() {
-		String response = controller.home();
+	public void testGetMoviesInTheatres() {
+		controller.getMoviesInTheatres();
 
-		Assert.assertEquals("Movie Finder!", response);
+		verify(moviesService, times(1)).getMoviesInTheatres();
 	}
 }
